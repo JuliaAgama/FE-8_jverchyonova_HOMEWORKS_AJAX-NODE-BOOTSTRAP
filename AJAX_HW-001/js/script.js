@@ -1,14 +1,21 @@
-/*** Ajax. NodeJS. BOOTSTRAP. Lesson 04. BOOTSTRAP. Personal Exercise #01 ****/
+/*** Ajax. NodeJS. BOOTSTRAP. HOMEWORK #01. Star Wars ****/
+
+/********** General Controller: **********/
 ;
-/********** -- **********/
+((UICtrl, RqstCtrl) => {
 
+    // set eventlistener on click (button 'get movies'):
+    const $btnGetMovie = UICtrl.getDOM().$btnGetMovie;
+    $btnGetMovie.on('click', function (event) {
+        event.preventDefault();
 
-console.log('*********');
+        //get functions that create DOM elements:
+        let doMovsDOM = UICtrl.createMoviesDOM;
+        let doCharsDOM = UICtrl.createCharactersDOM;
 
-console.log('this is script.js')
+        // send requests to server and display all: movies and characters:
+        RqstCtrl.displayAll(doMovsDOM, doCharsDOM);
+    });
 
-
-console.log('****************************************')
-
-
+})(UserInterfaceController, RequestController);
 

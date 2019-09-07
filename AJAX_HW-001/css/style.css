@@ -1,49 +1,61 @@
-/***** Ajax. NodeJS. BOOTSTRAP. Lesson 04. BOOTSTRAP. Personal Exercise #01 *****/
+/***** Ajax. NodeJS. BOOTSTRAP. HOMEWORK #01. Star Wars *****/
 
-body {
-    width: 100%;
-    height: 100vh;
-    margin: 30px;
-    background-color: #ddd;
-}
-h1 {
-    font-size: 30px;
-    color: red;
-    line-height: 1.5;
-    margin: 0 auto 30px;
-    /* text-align: center; */
+
+#btn-get-movie {
+    background: #7b1fa2;
+
 }
 
-/********** FORM **********/
-.input-field {
+/********** Movies list **********/
+.list-counter-circle {
+    list-style: none;
+    counter-reset: list;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+  }
+  .list-counter-circle>li {
+    position: relative;
     display: block;
+    height: 2rem;
+    line-height: 2rem;
+    margin-left: 1.75rem;
+    margin-bottom: .25rem;
+    padding-left: 1rem;
+    padding-right: .5rem;
+    color: #fff;
+    background: #7b1fa2;
+    white-space: nowrap;
+    border-radius: .25rem;
+  }
+  .list-counter-circle>li:last-child {
+    margin-bottom: 0;
+  }
+  .list-counter-circle>li::before {
+    content: counter(list);
+    counter-increment: list;
+    position: absolute;
+    left: -2rem;
+    top: -.25rem;
+    bottom: -.25rem;
+    width: 2.5rem;
+    line-height: 2rem;
+    border-radius: 1.25rem;
+    border: .25rem solid #fff;
+    text-align: center;
+    color: #fff;
+    background: #7b1fa2;
+  }
+
+
+/********** characters lists **********/
+.char-item {
+  list-style: circle;
+  margin-left: 2rem;
 }
-.submit-btn {
-    color: green;
-    font-weight: 700;
-}
 
 
-/********** CARDS **********/
-
-.cards-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    /* align-items: center; */
-    background-color: #fff;
-    margin: 30px 0;
-    padding: 20px;
-    border: 1px solid #000;
-    min-height: 50px;
-    width: 85%
-}
-
-.card {
-    margin: 10px 0 0 10px;
-    padding: 10px;
-    border: 1px solid #000;
-    background-color: #fff;
-    line-height: 1.3;
-    font-size: 16px;
+/********** General **********/
+.hidden {
+    display: none;
 }
